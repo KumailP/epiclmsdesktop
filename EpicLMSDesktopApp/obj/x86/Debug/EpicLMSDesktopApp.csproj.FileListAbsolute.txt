@@ -1,0 +1,10 @@
+c:\users\kc\documents\visual studio 2010\Projects\EpicLMSDesktopApp\EpicLMSDesktopApp\obj\x86\Debug\EpicLMSDesktopApp.formLogin.resources
+c:\users\kc\documents\visual studio 2010\Projects\EpicLMSDesktopApp\EpicLMSDesktopApp\obj\x86\Debug\EpicLMSDesktopApp.Properties.Resources.resources
+c:\users\kc\documents\visual studio 2010\Projects\EpicLMSDesktopApp\EpicLMSDesktopApp\obj\x86\Debug\EpicLMSDesktopApp.csproj.GenerateResource.Cache
+c:\users\kc\documents\visual studio 2010\Projects\EpicLMSDesktopApp\EpicLMSDesktopApp\bin\Debug\EpicLMSDesktopApp.exe
+c:\users\kc\documents\visual studio 2010\Projects\EpicLMSDesktopApp\EpicLMSDesktopApp\bin\Debug\EpicLMSDesktopApp.pdb
+c:\users\kc\documents\visual studio 2010\Projects\EpicLMSDesktopApp\EpicLMSDesktopApp\obj\x86\Debug\EpicLMSDesktopApp.formMain.resources
+c:\users\kc\documents\visual studio 2010\Projects\EpicLMSDesktopApp\EpicLMSDesktopApp\obj\x86\Debug\EpicLMSDesktopApp.exe
+c:\users\kc\documents\visual studio 2010\Projects\EpicLMSDesktopApp\EpicLMSDesktopApp\obj\x86\Debug\EpicLMSDesktopApp.pdb
+C:\Users\kc\documents\visual studio 2010\Projects\EpicLMSDesktopApp\EpicLMSDesktopApp\obj\x86\Debug\EpicLMSDesktopApp.csprojResolveAssemblyReference.cache
+C:\Users\kc\documents\visual studio 2010\Projects\EpicLMSDesktopApp\EpicLMSDesktopApp\bin\Debug\MySql.Data.DLL
