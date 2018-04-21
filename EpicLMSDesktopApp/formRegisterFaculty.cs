@@ -10,13 +10,12 @@ using MySql.Data.MySqlClient;
 
 namespace EpicLMSDesktopApp
 {
-    public partial class formRegisterStudent : Form
+    public partial class formRegisterFaculty : Form
     {
-        public formRegisterStudent()
+        public formRegisterFaculty()
         {
             InitializeComponent();
             comboDept.SelectedIndex = 0;
-            comboSemester.SelectedIndex = 0;
         }
 
         protected override void WndProc(ref Message m)
@@ -102,7 +101,7 @@ namespace EpicLMSDesktopApp
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            if (txtEmail.Text == "" || txtFname.Text == "" || txtLname.Text == "" || txtPassword.Text == "" || txtEmail.Text == "email" || txtFname.Text == "first name" || txtLname.Text == "last name" || txtPassword.Text == "password" || comboDept.SelectedItem.ToString() == "" || comboSemester.SelectedItem.ToString() == "")
+            if (txtEmail.Text == "" || txtFname.Text == "" || txtLname.Text == "" || txtPassword.Text == "" || txtEmail.Text == "email" || txtFname.Text == "first name" || txtLname.Text == "last name" || txtPassword.Text == "password" || comboDept.SelectedItem.ToString() == "")
             {
                 MessageBox.Show("Please enter all the fields");
             }
@@ -114,7 +113,6 @@ namespace EpicLMSDesktopApp
                 string pw = txtPassword.Text;
                 //int dept = comboDept.SelectedIndex;
                 int dept = comboDept.SelectedIndex + 1;
-                int semester = Int32.Parse(comboSemester.SelectedItem.ToString());
                 //MessageBox.Show("email: " + email + ", fname: " + fname + ", lname: " + lname + ", pw: " + pw + "deptid: " + dept + ", semester: " + semester);
                 if (!IsValidEmail(email))
                 {
@@ -127,7 +125,7 @@ namespace EpicLMSDesktopApp
 
                     MySqlConnection con = MySQLConnection.openCon();
 
-                    string query = "INSERT INTO student (first_name, last_name, email, password, dept_id, photo, semester) VALUES('" + fname + "', '" + lname + "', '" + email + "', '" + myHash + "', " + dept + ", 'default.jpg', " + semester + ")";
+                    string query = "INSERT INTO faculty (first_name, last_name, email, password, dept_id, photo) VALUES('" + fname + "', '" + lname + "', '" + email + "', '" + myHash + "', " + dept + ", 'default.jpg')";
 
                     MySqlCommand cmd = new MySqlCommand(query, con);
                     cmd.ExecuteNonQuery();

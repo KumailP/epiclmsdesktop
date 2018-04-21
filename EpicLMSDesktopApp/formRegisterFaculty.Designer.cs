@@ -1,6 +1,6 @@
 ﻿namespace EpicLMSDesktopApp
 {
-    partial class formRegisterStudent
+    partial class formRegisterFaculty
     {
         /// <summary>
         /// Required designer variable.
@@ -43,12 +43,8 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnRegister = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.comboSemester = new System.Windows.Forms.ComboBox();
             this.registerLbl = new System.Windows.Forms.Label();
             this.panel4.SuspendLayout();
-            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -69,9 +65,9 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(200, 74);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(133, 32);
+            this.label2.Size = new System.Drawing.Size(125, 32);
             this.label2.TabIndex = 6;
-            this.label2.Text = "Student";
+            this.label2.Text = "Faculty";
             // 
             // txtLname
             // 
@@ -215,7 +211,7 @@
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Font = new System.Drawing.Font("Verdana", 11F);
-            this.btnExit.Location = new System.Drawing.Point(405, 491);
+            this.btnExit.Location = new System.Drawing.Point(405, 421);
             this.btnExit.Name = "btnExit";
             this.btnExit.Padding = new System.Windows.Forms.Padding(3);
             this.btnExit.Size = new System.Drawing.Size(98, 47);
@@ -231,7 +227,7 @@
             this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegister.Font = new System.Drawing.Font("Verdana", 11F);
             this.btnRegister.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnRegister.Location = new System.Drawing.Point(36, 491);
+            this.btnRegister.Location = new System.Drawing.Point(36, 421);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Padding = new System.Windows.Forms.Padding(3);
             this.btnRegister.Size = new System.Drawing.Size(352, 47);
@@ -240,54 +236,13 @@
             this.btnRegister.UseVisualStyleBackColor = false;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Verdana", 13.8F);
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label4.Location = new System.Drawing.Point(22, 13);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(123, 29);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "semester";
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.White;
-            this.panel6.Controls.Add(this.label4);
-            this.panel6.Controls.Add(this.comboSemester);
-            this.panel6.Location = new System.Drawing.Point(36, 419);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(467, 55);
-            this.panel6.TabIndex = 15;
-            // 
-            // comboSemester
-            // 
-            this.comboSemester.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboSemester.Font = new System.Drawing.Font("Verdana", 10F);
-            this.comboSemester.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.comboSemester.FormattingEnabled = true;
-            this.comboSemester.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8"});
-            this.comboSemester.Location = new System.Drawing.Point(170, 15);
-            this.comboSemester.Name = "comboSemester";
-            this.comboSemester.Size = new System.Drawing.Size(281, 28);
-            this.comboSemester.TabIndex = 6;
-            // 
             // registerLbl
             // 
             this.registerLbl.AutoSize = true;
             this.registerLbl.Cursor = System.Windows.Forms.Cursors.Hand;
             this.registerLbl.Font = new System.Drawing.Font("Verdana", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.registerLbl.ForeColor = System.Drawing.Color.White;
-            this.registerLbl.Location = new System.Drawing.Point(102, 559);
+            this.registerLbl.Location = new System.Drawing.Point(102, 489);
             this.registerLbl.Name = "registerLbl";
             this.registerLbl.Size = new System.Drawing.Size(325, 23);
             this.registerLbl.TabIndex = 9;
@@ -299,9 +254,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(546, 602);
+            this.ClientSize = new System.Drawing.Size(546, 530);
             this.Controls.Add(this.registerLbl);
-            this.Controls.Add(this.panel6);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.txtPassword);
@@ -321,8 +275,6 @@
             this.Text = "formRegisterStudent";
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -345,9 +297,6 @@
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.ComboBox comboSemester;
         private System.Windows.Forms.Label registerLbl;
     }
 }

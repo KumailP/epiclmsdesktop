@@ -10,3 +10,4 @@ C:\Users\kc\documents\visual studio 2010\Projects\EpicLMSDesktopApp\EpicLMSDeskt
 C:\Users\kc\documents\visual studio 2010\Projects\EpicLMSDesktopApp\EpicLMSDesktopApp\bin\Debug\MySql.Data.DLL
 C:\Users\kc\documents\visual studio 2010\Projects\EpicLMSDesktopApp\EpicLMSDesktopApp\obj\x86\Debug\EpicLMSDesktopApp.formRegisterStudent.resources
 C:\Users\kc\documents\visual studio 2010\Projects\EpicLMSDesktopApp\EpicLMSDesktopApp\obj\x86\Debug\EpicLMSDesktopApp.formRegisterType.resources
+C:\Users\kc\documents\visual studio 2010\Projects\EpicLMSDesktopApp\EpicLMSDesktopApp\obj\x86\Debug\EpicLMSDesktopApp.formRegisterFaculty.resources

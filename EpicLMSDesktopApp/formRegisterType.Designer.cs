@@ -32,7 +32,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.STUDENT = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.FACULTY = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -42,7 +42,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(34, 25);
+            this.label1.Location = new System.Drawing.Point(12, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(476, 52);
             this.label1.TabIndex = 4;
@@ -52,7 +52,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.STUDENT);
-            this.panel1.Location = new System.Drawing.Point(77, 96);
+            this.panel1.Location = new System.Drawing.Point(77, 93);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(372, 69);
             this.panel1.TabIndex = 6;
@@ -73,29 +73,31 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.FACULTY);
             this.panel2.Location = new System.Drawing.Point(77, 180);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(372, 69);
             this.panel2.TabIndex = 8;
+            this.panel2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseClick);
             // 
-            // label2
+            // FACULTY
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label2.Location = new System.Drawing.Point(100, 16);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(170, 36);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "TEACHER";
+            this.FACULTY.AutoSize = true;
+            this.FACULTY.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FACULTY.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.FACULTY.Location = new System.Drawing.Point(100, 16);
+            this.FACULTY.Name = "FACULTY";
+            this.FACULTY.Size = new System.Drawing.Size(170, 36);
+            this.FACULTY.TabIndex = 7;
+            this.FACULTY.Text = "TEACHER";
+            this.FACULTY.Click += new System.EventHandler(this.FACULTY_Click);
             // 
             // formRegisterType
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(533, 282);
+            this.ClientSize = new System.Drawing.Size(537, 282);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
@@ -118,6 +120,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label STUDENT;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label FACULTY;
     }
 }

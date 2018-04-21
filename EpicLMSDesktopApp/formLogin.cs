@@ -61,7 +61,30 @@ namespace EpicLMSDesktopApp
             }
             else
             {
-                MessageBox.Show("User not found");
+                query = "SELECT * from faculty WHERE email='" + email + "'";
+                cmd = new MySqlCommand(query, con);
+                dataReader = cmd.ExecuteReader();
+                DataTable dtb2 = new DataTable();
+                dtb2.Load(dataReader);
+
+                if (dtb2.Rows.Count == 1)
+                {
+                    bool doesmatch = BCrypt.CheckPassword(password, dtb2.Rows[0][4].ToString());
+                    if (doesmatch)
+                    {
+                        formMain frm = new formMain();
+                        this.Hide();
+                        frm.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Unable to login!");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("User not found");
+                }
             }
 
 
@@ -84,20 +107,16 @@ namespace EpicLMSDesktopApp
 
         private void txtPassword_MouseClick(object sender, MouseEventArgs e)
         {
-            txtPassword.UseSystemPasswordChar = true;
+            
             if (txtPassword.Text == "password")
             {
+                txtPassword.UseSystemPasswordChar = true;
                 txtPassword.Text = "";
             }
         }
 
         private void txtPassword_TextChanged(object sender, EventArgs e)
         {
-            txtPassword.UseSystemPasswordChar = true;
-            if (txtPassword.Text == "password")
-            {
-                txtPassword.Text = "";
-            }
         }
 
         private void registerLbl_Click(object sender, EventArgs e)
@@ -105,6 +124,32 @@ namespace EpicLMSDesktopApp
             formRegisterType frmReg = new formRegisterType();
             this.Hide();
             frmReg.Show();
+        }
+
+        private void txtEmail_Leave(object sender, EventArgs e)
+        {
+            if (txtEmail.Text == "")
+            {
+                txtEmail.Text = "email";
+            }
+        }
+
+        private void txtPassword_Leave(object sender, EventArgs e)
+        {
+            if (txtPassword.Text == "")
+            {
+                txtPassword.UseSystemPasswordChar = false;
+                txtPassword.Text = "password";
+            }
+        }
+
+        private void txtPassword_Enter(object sender, EventArgs e)
+        {
+            txtPassword.UseSystemPasswordChar = true;
+            if (txtPassword.Text == "password")
+            {
+                txtPassword.Text = "";
+            }
         }
     }
 }

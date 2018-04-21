@@ -54,6 +54,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BCrypt.cs" />
+    <Compile Include="formRegisterFaculty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formRegisterFaculty.Designer.cs">
+      <DependentUpon>formRegisterFaculty.cs</DependentUpon>
+    </Compile>
     <Compile Include="formLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +87,9 @@
     <Compile Include="MySQLConnection.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="formRegisterFaculty.resx">
+      <DependentUpon>formRegisterFaculty.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formLogin.resx">
       <DependentUpon>formLogin.cs</DependentUpon>
     </EmbeddedResource>

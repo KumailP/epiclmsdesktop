@@ -49,7 +49,7 @@
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Padding = new System.Windows.Forms.Padding(3);
             this.btnLogin.Size = new System.Drawing.Size(228, 47);
-            this.btnLogin.TabIndex = 0;
+            this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
@@ -68,6 +68,7 @@
             this.txtEmail.Text = "email";
             this.txtEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtEmail.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtEmail_MouseClick);
+            this.txtEmail.Leave += new System.EventHandler(this.txtEmail_Leave);
             // 
             // txtPassword
             // 
@@ -82,6 +83,8 @@
             this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPassword.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtPassword_MouseClick);
             this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
+            this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
+            this.txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
             // 
             // btnExit
             // 
@@ -93,7 +96,7 @@
             this.btnExit.Name = "btnExit";
             this.btnExit.Padding = new System.Windows.Forms.Padding(3);
             this.btnExit.Size = new System.Drawing.Size(98, 47);
-            this.btnExit.TabIndex = 0;
+            this.btnExit.TabIndex = 4;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click_1);
@@ -105,7 +108,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(35, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(412, 53);
+            this.label1.Size = new System.Drawing.Size(405, 52);
             this.label1.TabIndex = 3;
             this.label1.Text = "EpicLMS - Login";
             // 
@@ -134,7 +137,7 @@
             this.registerLbl.Location = new System.Drawing.Point(119, 301);
             this.registerLbl.Name = "registerLbl";
             this.registerLbl.Size = new System.Drawing.Size(232, 23);
-            this.registerLbl.TabIndex = 3;
+            this.registerLbl.TabIndex = 5;
             this.registerLbl.Text = "or click here to register";
             this.registerLbl.Click += new System.EventHandler(this.registerLbl_Click);
             // 
