@@ -14,6 +14,17 @@ namespace EpicLMSDesktopApp
             InitializeComponent();
         }
 
+        protected override void WndProc(ref Message m)
+        {
+            base.WndProc(ref m);
+            if (m.Msg == WM_NCHITTEST)
+                m.Result = (IntPtr)(HT_CAPTION);
+        }
+
+        private const int WM_NCHITTEST = 0x84;
+        private const int HT_CLIENT = 0x1;
+        private const int HT_CAPTION = 0x2;
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
 
@@ -73,11 +84,27 @@ namespace EpicLMSDesktopApp
 
         private void txtPassword_MouseClick(object sender, MouseEventArgs e)
         {
+            txtPassword.UseSystemPasswordChar = true;
             if (txtPassword.Text == "password")
             {
-                txtPassword.UseSystemPasswordChar = true;
                 txtPassword.Text = "";
             }
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+            txtPassword.UseSystemPasswordChar = true;
+            if (txtPassword.Text == "password")
+            {
+                txtPassword.Text = "";
+            }
+        }
+
+        private void registerLbl_Click(object sender, EventArgs e)
+        {
+            formRegisterType frmReg = new formRegisterType();
+            this.Hide();
+            frmReg.Show();
         }
     }
 }

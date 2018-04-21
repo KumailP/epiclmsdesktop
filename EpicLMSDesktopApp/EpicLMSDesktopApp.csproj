@@ -66,6 +66,18 @@
     <Compile Include="formMain.Designer.cs">
       <DependentUpon>formMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="formRegisterStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formRegisterStudent.Designer.cs">
+      <DependentUpon>formRegisterStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formRegisterType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formRegisterType.Designer.cs">
+      <DependentUpon>formRegisterType.cs</DependentUpon>
+    </Compile>
     <Compile Include="MySQLConnection.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -74,6 +86,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formMain.resx">
       <DependentUpon>formMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formRegisterStudent.resx">
+      <DependentUpon>formRegisterStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formRegisterType.resx">
+      <DependentUpon>formRegisterType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -35,6 +35,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.registerLbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnLogin
@@ -80,6 +81,7 @@
             this.txtPassword.Text = "password";
             this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPassword.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtPassword_MouseClick);
+            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // btnExit
             // 
@@ -99,11 +101,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Verdana", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Verdana", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(52, 28);
+            this.label1.Location = new System.Drawing.Point(35, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(374, 53);
+            this.label1.Size = new System.Drawing.Size(412, 53);
             this.label1.TabIndex = 3;
             this.label1.Text = "EpicLMS - Login";
             // 
@@ -123,12 +125,26 @@
             this.panel2.Size = new System.Drawing.Size(332, 55);
             this.panel2.TabIndex = 5;
             // 
+            // registerLbl
+            // 
+            this.registerLbl.AutoSize = true;
+            this.registerLbl.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.registerLbl.Font = new System.Drawing.Font("Verdana", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.registerLbl.ForeColor = System.Drawing.Color.White;
+            this.registerLbl.Location = new System.Drawing.Point(119, 301);
+            this.registerLbl.Name = "registerLbl";
+            this.registerLbl.Size = new System.Drawing.Size(232, 23);
+            this.registerLbl.TabIndex = 3;
+            this.registerLbl.Text = "or click here to register";
+            this.registerLbl.Click += new System.EventHandler(this.registerLbl_Click);
+            // 
             // formLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(482, 330);
+            this.ClientSize = new System.Drawing.Size(482, 345);
+            this.Controls.Add(this.registerLbl);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtEmail);
@@ -155,5 +171,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label registerLbl;
     }
 }
