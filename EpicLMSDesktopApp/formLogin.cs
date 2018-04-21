@@ -23,7 +23,7 @@ namespace EpicLMSDesktopApp
                 con.Open();
                 
 
-                MessageBox.Show("Connection Open ! ");
+                //MessageBox.Show("Connection Open ! ");
 
                 string email = txtEmail.Text.Trim();
                 string password = txtPassword.Text;
@@ -36,13 +36,14 @@ namespace EpicLMSDesktopApp
                 //cmd.ExecuteNonQuery();
 
                 //new SqlDataAdapter(query, con).Fill(dtb1);
-                if (dtb1.Rows.Count > 0)
+                if (dtb1.Rows.Count == 1)
                 {
                     bool doesmatch = BCrypt.CheckPassword(password, dtb1.Rows[0][4].ToString());
                     if (doesmatch)
                     {
-                        MessageBox.Show("Logged in successfully!");
-                        xGrid.DataSource = dtb1;
+                        formMain frm = new formMain();
+                        this.Hide();
+                        frm.Show();
                     }
                     else
                     {
@@ -83,6 +84,29 @@ namespace EpicLMSDesktopApp
             catch (MySqlException ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+
+        private void btnExit_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void txtEmail_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (txtEmail.Text == "email")
+            {
+                txtEmail.Text = "";
+            }
+        }
+
+        private void txtPassword_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (txtPassword.Text == "password")
+            {
+                txtPassword.UseSystemPasswordChar = true;
+                txtPassword.Text = "";
             }
         }
     }
