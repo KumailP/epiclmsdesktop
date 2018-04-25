@@ -249,11 +249,11 @@
             this.registerLbl.Text = "already registered? click to log in";
             this.registerLbl.Click += new System.EventHandler(this.registerLbl_Click);
             // 
-            // formRegisterStudent
+            // formRegisterFaculty
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SteelBlue;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.ClientSize = new System.Drawing.Size(546, 530);
             this.Controls.Add(this.registerLbl);
             this.Controls.Add(this.btnExit);
@@ -270,7 +270,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "formRegisterStudent";
+            this.Name = "formRegisterFaculty";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "formRegisterStudent";
             this.panel4.ResumeLayout(false);

@@ -25,12 +25,12 @@ namespace EpicLMSDesktopApp
         private const int HT_CLIENT = 0x1;
         private const int HT_CAPTION = 0x2;
 
+        public User user1 = new User();
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
-
             MySqlConnection con = MySQLConnection.openCon();
-                
+
 
             //MessageBox.Show("Connection Open ! ");
 
@@ -50,7 +50,9 @@ namespace EpicLMSDesktopApp
                 bool doesmatch = BCrypt.CheckPassword(password, dtb1.Rows[0][4].ToString());
                 if (doesmatch)
                 {
-                    formMain frm = new formMain();
+                    //MessageBox.Show("user_id: " + dtb1.Rows[0][0] + "\nName: " + dtb1.Rows[0][1] + " " + dtb1.Rows[0][2] + "\nEmail: " + dtb1.Rows[0][3] + "\nDept_Id: " + dtb1.Rows[0][5] + "\nSemester: " + dtb1.Rows[0][7]);
+                    user1.setValues((int)dtb1.Rows[0][0], 1, (int)dtb1.Rows[0][5], (int)dtb1.Rows[0][7], dtb1.Rows[0][1].ToString(), dtb1.Rows[0][2].ToString(), dtb1.Rows[0][3].ToString());
+                    formMain frm = new formMain(this);
                     this.Hide();
                     frm.Show();
                 }
@@ -72,7 +74,8 @@ namespace EpicLMSDesktopApp
                     bool doesmatch = BCrypt.CheckPassword(password, dtb2.Rows[0][4].ToString());
                     if (doesmatch)
                     {
-                        formMain frm = new formMain();
+                        user1.setValues((int)dtb2.Rows[0][0], 2, (int)dtb2.Rows[0][5], -1, dtb2.Rows[0][1].ToString(), dtb2.Rows[0][2].ToString(), dtb2.Rows[0][3].ToString());
+                        formMain frm = new formMain(this);
                         this.Hide();
                         frm.Show();
                     }

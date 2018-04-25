@@ -53,6 +53,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddCoursesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AddCoursesControl.Designer.cs">
+      <DependentUpon>AddCoursesControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="BCrypt.cs" />
     <Compile Include="formRegisterFaculty.cs">
       <SubType>Form</SubType>
@@ -84,9 +90,37 @@
     <Compile Include="formRegisterType.Designer.cs">
       <DependentUpon>formRegisterType.cs</DependentUpon>
     </Compile>
+    <Compile Include="HomeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HomeControl.Designer.cs">
+      <DependentUpon>HomeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCoursesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ManageCoursesControl.Designer.cs">
+      <DependentUpon>ManageCoursesControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="MySQLConnection.cs" />
+    <Compile Include="PeopleControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PeopleControl.Designer.cs">
+      <DependentUpon>PeopleControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Profile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Profile.Designer.cs">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User.cs" />
+    <EmbeddedResource Include="AddCoursesControl.resx">
+      <DependentUpon>AddCoursesControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formRegisterFaculty.resx">
       <DependentUpon>formRegisterFaculty.cs</DependentUpon>
     </EmbeddedResource>
@@ -101,6 +135,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formRegisterType.resx">
       <DependentUpon>formRegisterType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeControl.resx">
+      <DependentUpon>HomeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageCoursesControl.resx">
+      <DependentUpon>ManageCoursesControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PeopleControl.resx">
+      <DependentUpon>PeopleControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Profile.resx">
+      <DependentUpon>Profile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -11,14 +11,114 @@ namespace EpicLMSDesktopApp
 {
     public partial class formMain : Form
     {
-        public formMain()
+        private User user = new User();
+        private System.Drawing.Color activeColor = ColorTranslator.FromHtml("#4682b4");
+        private System.Drawing.Color inactiveColor = ColorTranslator.FromHtml("#303030");
+
+        public formMain(formLogin frm)
         {
             InitializeComponent();
+            user = frm.user1;
         }
+
+        protected override void WndProc(ref Message m)
+        {
+            base.WndProc(ref m);
+            if (m.Msg == WM_NCHITTEST)
+                m.Result = (IntPtr)(HT_CAPTION);
+        }
+
+        private const int WM_NCHITTEST = 0x84;
+        private const int HT_CLIENT = 0x1;
+        private const int HT_CAPTION = 0x2;
 
         private void formMain_Load(object sender, EventArgs e)
         {
-
+            //MessageBox.Show("user_id: " + user.user_id + "\nName: " + user.fname + " " + user.lname + "\nEmail: " + user.email + "\nDept_Id: " + user.dept_id + "\nSemester: " + user.semester);
+            txtTime.Text = DateTime.Now.ToString("dd MMM, yyyy HH:mm");
+            txtName.Text = (user.fname + " " + user.lname).ToString();
+            if (user.dept_id == 1)
+            {
+                txtDept.Text = "Computer Science";
+            }
+            else if (user.dept_id == 2)
+            {
+                txtDept.Text = "Mechanical Engineering";
+            }
+            else if (user.dept_id == 3)
+            {
+                txtDept.Text = "Electrical Engineering";
+            }
+            else if (user.dept_id == 4)
+            {
+                txtDept.Text = "Bachelors in Business Administration";
+            }
+            if (user.usertype == 1)
+            {
+                btnAddCourses.Hide();
+                addCoursesControl1.Hide();
+            }
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            homeControl1.BringToFront();
+            btnHome.BackColor = activeColor;
+            btnProfile.BackColor = inactiveColor;
+            btnPeople.BackColor = inactiveColor;
+            btnManageCourses.BackColor = inactiveColor;
+            btnAddCourses.BackColor = inactiveColor;
+        }
+
+        private void btnProfile_Click(object sender, EventArgs e)
+        {
+            profile1.BringToFront();
+            btnProfile.BackColor = activeColor;
+            btnHome.BackColor = inactiveColor;
+            btnPeople.BackColor = inactiveColor;
+            btnManageCourses.BackColor = inactiveColor;
+            btnAddCourses.BackColor = inactiveColor;
+        }
+
+        private void btnPeople_Click(object sender, EventArgs e)
+        {
+            peopleControl1.BringToFront();
+            btnPeople.BackColor = activeColor;
+            btnProfile.BackColor = inactiveColor;
+            btnHome.BackColor = inactiveColor;
+            btnManageCourses.BackColor = inactiveColor;
+            btnAddCourses.BackColor = inactiveColor;
+        }
+
+        private void btnManageCourses_Click(object sender, EventArgs e)
+        {
+            manageCoursesControl1.BringToFront();
+            btnManageCourses.BackColor = activeColor;
+            btnPeople.BackColor = inactiveColor;
+            btnProfile.BackColor = inactiveColor;
+            btnHome.BackColor = inactiveColor;
+            btnAddCourses.BackColor = inactiveColor;
+        }
+
+        private void btnAddCourses_Click(object sender, EventArgs e)
+        {
+            addCoursesControl1.BringToFront();
+            btnManageCourses.BackColor = inactiveColor;
+            btnPeople.BackColor = inactiveColor;
+            btnProfile.BackColor = inactiveColor;
+            btnHome.BackColor = inactiveColor;
+            btnAddCourses.BackColor = activeColor;
+        }
+
     }
 }
