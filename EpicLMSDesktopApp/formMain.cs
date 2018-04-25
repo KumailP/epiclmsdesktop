@@ -10,8 +10,8 @@ using System.Windows.Forms;
 namespace EpicLMSDesktopApp
 {
     public partial class formMain : Form
-    {
-        private User user = new User();
+    {   
+        public User user = new User();
         private System.Drawing.Color activeColor = ColorTranslator.FromHtml("#4682b4");
         private System.Drawing.Color inactiveColor = ColorTranslator.FromHtml("#303030");
 
@@ -58,6 +58,7 @@ namespace EpicLMSDesktopApp
                 btnAddCourses.Hide();
                 addCoursesControl1.Hide();
             }
+            homeControl1.setUser(user);
         }
 
         private void button7_Click(object sender, EventArgs e)
