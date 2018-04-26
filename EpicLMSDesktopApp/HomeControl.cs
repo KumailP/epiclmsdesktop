@@ -26,7 +26,7 @@ namespace EpicLMSDesktopApp
         public void setUser(User user)
         {
             this.user = user;
-            MessageBox.Show(user.fname);
+            //MessageBox.Show(user.fname);
             setupCourses();
         }
 
@@ -63,34 +63,16 @@ namespace EpicLMSDesktopApp
         void b_Click(object sender, EventArgs e)
         {
             var btn = sender as Control;
+            btn.BackColor = ColorTranslator.FromHtml("#505050");
 
-            MySqlConnection con = MySQLConnection.openCon();
-
-            string query = "SELECT course_name, course_id FROM course WHERE course_id IN (SELECT course_id from student_course WHERE student_id=" + user.user_id + " AND course_name='" + btn.Text + "')";
-            MySqlCommand cmd = new MySqlCommand(query, con);
-            MySqlDataReader dataReader = cmd.ExecuteReader();
-            DataTable dtb1 = new DataTable();
-            dtb1.Load(dataReader);
-
-            if (dtb1.Rows.Count >= 1)
-            {
-                string cname = dtb1.Rows[0][0].ToString();
-                string cid = dtb1.Rows[0][1].ToString();
-
-                query = "SELECT * FROM course_data WHERE course_id = " + cid;
-                MySqlCommand newcmd = new MySqlCommand(query, con);
-                dataReader = newcmd.ExecuteReader();
-                DataTable dtb2 = new DataTable();
-                dtb2.Load(dataReader);
-
-                if (dtb2.Rows.Count >= 1)
-                {
-                    MessageBox.Show(cname);
-                }
-                
-            }
-            con.Close();
             
+            courseViewForm cForm = new courseViewForm(user, btn.Text.ToString());
+            cForm.ShowDialog();
+
+
+            btn.BackColor = ColorTranslator.FromHtml("#303030");
+                    
+            //MessageBox.Show(cname);
 
             //new formLogin().Show();
         }

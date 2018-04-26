@@ -35,7 +35,7 @@ namespace EpicLMSDesktopApp
         private void formMain_Load(object sender, EventArgs e)
         {
             //MessageBox.Show("user_id: " + user.user_id + "\nName: " + user.fname + " " + user.lname + "\nEmail: " + user.email + "\nDept_Id: " + user.dept_id + "\nSemester: " + user.semester);
-            txtTime.Text = DateTime.Now.ToString("dd MMM, yyyy HH:mm");
+            txtTime.Text = DateTime.Now.ToString("dd MMM, yyyy");
             txtName.Text = (user.fname + " " + user.lname).ToString();
             if (user.dept_id == 1)
             {

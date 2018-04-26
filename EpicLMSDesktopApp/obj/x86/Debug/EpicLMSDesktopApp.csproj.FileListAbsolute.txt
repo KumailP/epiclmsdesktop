@@ -16,3 +16,4 @@ C:\Users\kc\documents\visual studio 2010\Projects\EpicLMSDesktopApp\EpicLMSDeskt
 C:\Users\kc\documents\visual studio 2010\Projects\EpicLMSDesktopApp\EpicLMSDesktopApp\obj\x86\Debug\EpicLMSDesktopApp.AddCoursesControl.resources
 C:\Users\kc\documents\visual studio 2010\Projects\EpicLMSDesktopApp\EpicLMSDesktopApp\obj\x86\Debug\EpicLMSDesktopApp.ManageCoursesControl.resources
 C:\Users\kc\documents\visual studio 2010\Projects\EpicLMSDesktopApp\EpicLMSDesktopApp\obj\x86\Debug\EpicLMSDesktopApp.PeopleControl.resources
+C:\Users\kc\documents\visual studio 2010\Projects\EpicLMSDesktopApp\EpicLMSDesktopApp\obj\x86\Debug\EpicLMSDesktopApp.courseViewForm.resources

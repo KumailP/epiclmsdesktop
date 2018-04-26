@@ -12,6 +12,8 @@ namespace EpicLMSDesktopApp
         public formLogin()
         {
             InitializeComponent();
+            txtEmail.Text = "kumailpirzada@gmail.com";
+            txtPassword.Text = "mypwd";
         }
 
         protected override void WndProc(ref Message m)
