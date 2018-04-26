@@ -59,6 +59,7 @@ namespace EpicLMSDesktopApp
                 addCoursesControl1.Hide();
             }
             homeControl1.setUser(user);
+            profile1.setUser(user);
         }
 
         private void button7_Click(object sender, EventArgs e)
