@@ -14,6 +14,7 @@ namespace EpicLMSDesktopApp
         public string fname { get; set; }
         public string lname { get; set; }
         public string email { get; set; }
+        public string dept_name { get; set; }
 
         public User()
         {

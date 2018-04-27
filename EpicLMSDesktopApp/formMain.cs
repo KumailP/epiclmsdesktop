@@ -39,20 +39,21 @@ namespace EpicLMSDesktopApp
             txtName.Text = (user.fname + " " + user.lname).ToString();
             if (user.dept_id == 1)
             {
-                txtDept.Text = "Computer Science";
+                user.dept_name = "Computer Science";
             }
             else if (user.dept_id == 2)
             {
-                txtDept.Text = "Mechanical Engineering";
+                user.dept_name = "Mechanical Engineering";
             }
             else if (user.dept_id == 3)
             {
-                txtDept.Text = "Electrical Engineering";
+                user.dept_name = "Electrical Engineering";
             }
             else if (user.dept_id == 4)
             {
-                txtDept.Text = "Bachelors in Business Administration";
+                user.dept_name = "Bachelors in Business Administration";
             }
+            txtDept.Text = user.dept_name;
             if (user.usertype == 1)
             {
                 btnAddCourses.Hide();
@@ -60,6 +61,7 @@ namespace EpicLMSDesktopApp
             }
             homeControl1.setUser(user);
             profile1.setUser(user);
+            peopleControl1.setUser(user);
         }
 
         private void button7_Click(object sender, EventArgs e)
