@@ -16,10 +16,7 @@ namespace EpicLMSDesktopApp
         public HomeControl()
         {
             InitializeComponent();
-
-
             
-
             //MessageBox.Show(user.fname);
         }
 
@@ -40,7 +37,7 @@ namespace EpicLMSDesktopApp
             DataTable dtb1 = new DataTable();
             dtb1.Load(dataReader);
             con.Close();
-            
+                        
             for (int i = 0; i < dtb1.Rows.Count; i++)
             {
                 Button b = new Button();
@@ -49,6 +46,7 @@ namespace EpicLMSDesktopApp
                 b.Height = 100;
                 var margin = b.Margin;
                 margin.Left = 30;
+                b.Tag = "Course Button";
                 b.Margin = margin;
                 b.BackColor = ColorTranslator.FromHtml("#303030");
                 b.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -67,6 +65,7 @@ namespace EpicLMSDesktopApp
 
             
             courseViewForm cForm = new courseViewForm(user, btn.Text.ToString());
+            cForm.StartPosition = FormStartPosition.CenterParent;
             cForm.ShowDialog();
 
 

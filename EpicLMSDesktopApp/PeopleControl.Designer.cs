@@ -41,9 +41,9 @@
             this.label1.Font = new System.Drawing.Font("Century Gothic", 24F);
             this.label1.Location = new System.Drawing.Point(325, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(171, 49);
+            this.label1.Size = new System.Drawing.Size(160, 49);
             this.label1.TabIndex = 1;
-            this.label1.Text = "People:";
+            this.label1.Text = "People";
             // 
             // txtTitle
             // 

@@ -289,9 +289,9 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1038, 559);
-            this.Controls.Add(this.homeControl1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.homeControl1);
             this.Controls.Add(this.profile1);
             this.Controls.Add(this.addCoursesControl1);
             this.Controls.Add(this.manageCoursesControl1);
@@ -327,10 +327,10 @@
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button btnExit;
-        private HomeControl homeControl1;
         private Profile profile1;
         private PeopleControl peopleControl1;
         private ManageCoursesControl manageCoursesControl1;
         private AddCoursesControl addCoursesControl1;
+        private HomeControl homeControl1;
     }
 }

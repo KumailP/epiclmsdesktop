@@ -59,9 +59,12 @@ namespace EpicLMSDesktopApp
                 btnAddCourses.Hide();
                 addCoursesControl1.Hide();
             }
+
+
             homeControl1.setUser(user);
             profile1.setUser(user);
             peopleControl1.setUser(user);
+            manageCoursesControl1.setUser(user);
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -76,7 +79,14 @@ namespace EpicLMSDesktopApp
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            homeControl1.BringToFront();
+            HomeControl hc1 = new HomeControl();
+            this.Controls.Add(hc1);
+            hc1.setUser(user);
+            hc1.Location = new Point(155, 115);
+            hc1.Size = new Size(820, 409);
+            hc1.BringToFront();
+            homeControl1.Visible = false;
+            
             btnHome.BackColor = activeColor;
             btnProfile.BackColor = inactiveColor;
             btnPeople.BackColor = inactiveColor;

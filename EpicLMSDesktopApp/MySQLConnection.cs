@@ -11,7 +11,7 @@ namespace EpicLMSDesktopApp
     {
         public static MySqlConnection openCon()
         {
-            MySqlConnection con = new MySqlConnection("SERVER=localhost; DATABASE=epiclms; UID=root; PASSWORD=");
+            MySqlConnection con = new MySqlConnection("SERVER=localhost; DATABASE=epiclms; UID=root; PASSWORD=root");
             try
             {
                 con.Open();
