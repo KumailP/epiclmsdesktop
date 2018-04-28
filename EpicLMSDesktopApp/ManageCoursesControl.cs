@@ -60,40 +60,40 @@ namespace EpicLMSDesktopApp
 
         private void btnDrop_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewCell oneCell in dataGridView1.SelectedCells)
-            {
-                if (oneCell.Selected)
+            DialogResult dialogResult = MessageBox.Show("Do you want to drop the selected courses?", "Drop Courses?", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+               {
+                foreach (DataGridViewCell oneCell in dataGridView1.SelectedCells)
                 {
-                    DialogResult dialogResult = MessageBox.Show("Do you want to drop the selected courses?", "Drop Courses?", MessageBoxButtons.YesNo);
-                    if (dialogResult == DialogResult.Yes)
+                    if (oneCell.Selected)
                     {
-                        MySqlConnection con = MySQLConnection.openCon();
-                        string ccode = dataGridView1.CurrentRow.Cells["Course Code"].Value.ToString();
-                        string query = "SELECT course_id from course where course_code = '" + ccode + "'";
-                        MySqlCommand cmd = new MySqlCommand(query, con);
-                        MySqlDataReader dataReader = cmd.ExecuteReader();
-                        DataTable dtb1 = new DataTable();
-                        dtb1.Load(dataReader);
-                        query = "DELETE from student_course WHERE student_id = " + user.user_id + " AND course_id = " + dtb1.Rows[0][0];
-                        MySqlCommand newcmd = new MySqlCommand(query, con);
-                        newcmd.ExecuteNonQuery();
-                        dataGridView1.Rows.RemoveAt(oneCell.RowIndex);
+                            MySqlConnection con = MySQLConnection.openCon();
+                            string ccode = dataGridView1.CurrentRow.Cells["Course Code"].Value.ToString();
+                            string query = "SELECT course_id from course where course_code = '" + ccode + "'";
+                            MySqlCommand cmd = new MySqlCommand(query, con);
+                            MySqlDataReader dataReader = cmd.ExecuteReader();
+                            DataTable dtb1 = new DataTable();
+                            dtb1.Load(dataReader);
+                            query = "DELETE from student_course WHERE student_id = " + user.user_id + " AND course_id = " + dtb1.Rows[0][0];
+                            MySqlCommand newcmd = new MySqlCommand(query, con);
+                            newcmd.ExecuteNonQuery();
+                            dataGridView1.Rows.RemoveAt(oneCell.RowIndex);
+                        }
                     }
-                }
+                setUser(user);
+
             }
-            setUser(user);
-            
         }
 
         private void btnEnroll_Click(object sender, EventArgs e)
         {
+            DialogResult dialogResult = MessageBox.Show("Do you want to enroll in the selected courses?", "Enroll Courses?", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
             foreach (DataGridViewCell oneCell in dataGridView2.SelectedCells)
             {
                 if (oneCell.Selected)
                 {
-                    DialogResult dialogResult = MessageBox.Show("Do you want to enroll in the selected courses?", "Enroll Courses?", MessageBoxButtons.YesNo);
-                    if (dialogResult == DialogResult.Yes)
-                    {
                         MySqlConnection con = MySQLConnection.openCon();
                         string cid = dataGridView2.CurrentRow.Cells["course_id"].Value.ToString();
                         string query = "INSERT INTO  student_course (student_id, course_id) VALUES(" + user.user_id + ", " + cid + ")";
@@ -102,8 +102,8 @@ namespace EpicLMSDesktopApp
                         dataGridView2.Rows.RemoveAt(oneCell.RowIndex);
                     }
                 }
-            }
             setUser(user);
+            }
         }
     }
 }
