@@ -43,6 +43,7 @@
             this.txtTime = new System.Windows.Forms.Label();
             this.txtDept = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.Label();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.homeControl1 = new EpicLMSDesktopApp.HomeControl();
             this.profile1 = new EpicLMSDesktopApp.Profile();
             this.addCoursesControl1 = new EpicLMSDesktopApp.AddCoursesControl();
@@ -162,6 +163,7 @@
             this.panel2.Controls.Add(this.btnExit);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.txtTime);
+            this.panel2.Controls.Add(this.btnLogout);
             this.panel2.Controls.Add(this.txtDept);
             this.panel2.Controls.Add(this.txtName);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -246,6 +248,22 @@
             this.txtName.Size = new System.Drawing.Size(254, 29);
             this.txtName.TabIndex = 0;
             this.txtName.Text = "Firstname Lastname";
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.ForeColor = System.Drawing.Color.White;
+            this.btnLogout.Location = new System.Drawing.Point(705, 79);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(121, 44);
+            this.btnLogout.TabIndex = 0;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // homeControl1
             // 
@@ -332,5 +350,6 @@
         private ManageCoursesControl manageCoursesControl1;
         private AddCoursesControl addCoursesControl1;
         private HomeControl homeControl1;
+        private System.Windows.Forms.Button btnLogout;
     }
 }

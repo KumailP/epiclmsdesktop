@@ -134,5 +134,12 @@ namespace EpicLMSDesktopApp
             btnAddCourses.BackColor = activeColor;
         }
 
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            formLogin frmLogin = new formLogin();
+            frmLogin.Show();
+        }
+
     }
 }
