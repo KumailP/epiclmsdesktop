@@ -37,17 +37,17 @@
             this.btnProfile = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnDrag = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtTime = new System.Windows.Forms.Label();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.txtDept = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.Label();
-            this.btnLogout = new System.Windows.Forms.Button();
             this.homeControl1 = new EpicLMSDesktopApp.HomeControl();
             this.profile1 = new EpicLMSDesktopApp.Profile();
             this.addCoursesControl1 = new EpicLMSDesktopApp.AddCoursesControl();
-            this.manageCoursesControl1 = new EpicLMSDesktopApp.ManageCoursesControl();
             this.peopleControl1 = new EpicLMSDesktopApp.PeopleControl();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -159,6 +159,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel2.Controls.Add(this.btnDrag);
             this.panel2.Controls.Add(this.button8);
             this.panel2.Controls.Add(this.btnExit);
             this.panel2.Controls.Add(this.pictureBox1);
@@ -171,6 +172,23 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(838, 132);
             this.panel2.TabIndex = 2;
+            // 
+            // btnDrag
+            // 
+            this.btnDrag.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDrag.FlatAppearance.BorderSize = 0;
+            this.btnDrag.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnDrag.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnDrag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDrag.Font = new System.Drawing.Font("Century Gothic", 3F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDrag.ForeColor = System.Drawing.Color.White;
+            this.btnDrag.Image = ((System.Drawing.Image)(resources.GetObject("btnDrag.Image")));
+            this.btnDrag.Location = new System.Drawing.Point(700, 12);
+            this.btnDrag.Name = "btnDrag";
+            this.btnDrag.Size = new System.Drawing.Size(38, 38);
+            this.btnDrag.TabIndex = 0;
+            this.btnDrag.UseVisualStyleBackColor = true;
+            this.btnDrag.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnDrag_MouseDown);
             // 
             // button8
             // 
@@ -227,6 +245,22 @@
             this.txtTime.TabIndex = 0;
             this.txtTime.Text = "Time";
             // 
+            // btnLogout
+            // 
+            this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.ForeColor = System.Drawing.Color.White;
+            this.btnLogout.Location = new System.Drawing.Point(705, 79);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(121, 44);
+            this.btnLogout.TabIndex = 0;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
             // txtDept
             // 
             this.txtDept.AutoSize = true;
@@ -249,22 +283,6 @@
             this.txtName.TabIndex = 0;
             this.txtName.Text = "Firstname Lastname";
             // 
-            // btnLogout
-            // 
-            this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLogout.FlatAppearance.BorderSize = 0;
-            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogout.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogout.ForeColor = System.Drawing.Color.White;
-            this.btnLogout.Location = new System.Drawing.Point(705, 79);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(121, 44);
-            this.btnLogout.TabIndex = 0;
-            this.btnLogout.Text = "Logout";
-            this.btnLogout.UseVisualStyleBackColor = false;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
-            // 
             // homeControl1
             // 
             this.homeControl1.Location = new System.Drawing.Point(208, 141);
@@ -286,13 +304,6 @@
             this.addCoursesControl1.Size = new System.Drawing.Size(820, 409);
             this.addCoursesControl1.TabIndex = 7;
             // 
-            // manageCoursesControl1
-            // 
-            this.manageCoursesControl1.Location = new System.Drawing.Point(208, 141);
-            this.manageCoursesControl1.Name = "manageCoursesControl1";
-            this.manageCoursesControl1.Size = new System.Drawing.Size(820, 409);
-            this.manageCoursesControl1.TabIndex = 6;
-            // 
             // peopleControl1
             // 
             this.peopleControl1.Location = new System.Drawing.Point(208, 137);
@@ -307,12 +318,11 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1038, 559);
+            this.Controls.Add(this.homeControl1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.homeControl1);
             this.Controls.Add(this.profile1);
             this.Controls.Add(this.addCoursesControl1);
-            this.Controls.Add(this.manageCoursesControl1);
             this.Controls.Add(this.peopleControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "formMain";
@@ -347,9 +357,9 @@
         private System.Windows.Forms.Button btnExit;
         private Profile profile1;
         private PeopleControl peopleControl1;
-        private ManageCoursesControl manageCoursesControl1;
         private AddCoursesControl addCoursesControl1;
         private HomeControl homeControl1;
         private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Button btnDrag;
     }
 }

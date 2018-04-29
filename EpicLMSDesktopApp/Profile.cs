@@ -20,29 +20,28 @@ namespace EpicLMSDesktopApp
         public void setUser(User user)
         {
             this.user = user;
+            
             txtName.Text = user.fname + " " + user.lname;
-            if (user.dept_id == 1)
-            {
-                txtDept.Text = "Computer Science";
-            }
-            else if (user.dept_id == 2)
-            {
-                txtDept.Text = "Mechanical Engineering";
-            }
-            else if (user.dept_id == 3)
-            {
-                txtDept.Text = "Electrical Engineering";
-            }
-            else if (user.dept_id == 4)
-            {
-                txtDept.Text = "Bachelors in Business Administration";
-            }
+            
+            txtDept.Text = user.dept_name;
             txtContact.Text = user.email;
             txtSemester.Text = user.semester.ToString();
 
             MySqlConnection con = MySQLConnection.openCon();
 
             string query = "select course_code as 'Course Code', course_name as 'Course Name' from course where course_id in (select course_id from student_course where student_id = " + user.user_id + ")";
+            if (user.usertype == 2)
+            {
+                label5.Hide();
+                txtSemester.Hide();
+                label7.Location = label5.Location;
+                txtContact.Location = txtSemester.Location;
+
+                label1.Text = "Teaching the following courses:";
+
+                query = "select course_code as 'Course Code', course_name as 'Course Name' from course where course_id in (select course_id from faculty_course where faculty_id = " + user.user_id + ")";
+            }
+
             MySqlCommand cmd = new MySqlCommand(query, con);
             MySqlDataReader dataReader = cmd.ExecuteReader();
             DataTable dtb1 = new DataTable();

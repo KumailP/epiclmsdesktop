@@ -15,22 +15,13 @@ namespace EpicLMSDesktopApp
         private System.Drawing.Color activeColor = ColorTranslator.FromHtml("#4682b4");
         private System.Drawing.Color inactiveColor = ColorTranslator.FromHtml("#303030");
 
+
         public formMain(formLogin frm)
         {
             InitializeComponent();
             user = frm.user1;
         }
 
-        protected override void WndProc(ref Message m)
-        {
-            base.WndProc(ref m);
-            if (m.Msg == WM_NCHITTEST)
-                m.Result = (IntPtr)(HT_CAPTION);
-        }
-
-        private const int WM_NCHITTEST = 0x84;
-        private const int HT_CLIENT = 0x1;
-        private const int HT_CAPTION = 0x2;
 
         private void formMain_Load(object sender, EventArgs e)
         {
@@ -59,12 +50,14 @@ namespace EpicLMSDesktopApp
                 btnAddCourses.Hide();
                 addCoursesControl1.Hide();
             }
-
-
             homeControl1.setUser(user);
-            profile1.setUser(user);
-            peopleControl1.setUser(user);
-            manageCoursesControl1.setUser(user);
+
+            if (user.usertype == 2)
+            {
+                btnPeople.Hide();
+                btnAddCourses.Location = btnManageCourses.Location;
+                btnManageCourses.Location = btnPeople.Location;
+            }
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -96,6 +89,7 @@ namespace EpicLMSDesktopApp
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
+            profile1.setUser(user);
             profile1.BringToFront();
             btnProfile.BackColor = activeColor;
             btnHome.BackColor = inactiveColor;
@@ -106,6 +100,7 @@ namespace EpicLMSDesktopApp
 
         private void btnPeople_Click(object sender, EventArgs e)
         {
+            peopleControl1.setUser(user);
             peopleControl1.BringToFront();
             btnPeople.BackColor = activeColor;
             btnProfile.BackColor = inactiveColor;
@@ -116,7 +111,14 @@ namespace EpicLMSDesktopApp
 
         private void btnManageCourses_Click(object sender, EventArgs e)
         {
-            manageCoursesControl1.BringToFront();
+            ManageCoursesControl mc = new ManageCoursesControl();
+            this.Controls.Add(mc);
+            mc.setUser(user);
+            mc.Location = new Point(155, 115);
+            mc.Size = new Size(820, 409);
+            mc.BringToFront();
+            mc.setUser(user);
+
             btnManageCourses.BackColor = activeColor;
             btnPeople.BackColor = inactiveColor;
             btnProfile.BackColor = inactiveColor;
@@ -126,6 +128,7 @@ namespace EpicLMSDesktopApp
 
         private void btnAddCourses_Click(object sender, EventArgs e)
         {
+            addCoursesControl1.setUser(user);
             addCoursesControl1.BringToFront();
             btnManageCourses.BackColor = inactiveColor;
             btnPeople.BackColor = inactiveColor;
@@ -139,6 +142,24 @@ namespace EpicLMSDesktopApp
             this.Close();
             formLogin frmLogin = new formLogin();
             frmLogin.Show();
+        }
+
+
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+
+        [System.Runtime.InteropServices.DllImportAttribute("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [System.Runtime.InteropServices.DllImportAttribute("user32.dll")]
+        public static extern bool ReleaseCapture();
+
+        private void btnDrag_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
         }
 
     }

@@ -17,13 +17,11 @@ namespace EpicLMSDesktopApp
         {
             InitializeComponent();
             
-            //MessageBox.Show(user.fname);
         }
 
         public void setUser(User user)
         {
             this.user = user;
-            //MessageBox.Show(user.fname);
             setupCourses();
         }
 
@@ -32,6 +30,11 @@ namespace EpicLMSDesktopApp
             MySqlConnection con = MySQLConnection.openCon();
 
             string query = "SELECT * FROM course INNER JOIN student_course WHERE student_id = " + user.user_id + " AND student_course.course_id = course.course_id";
+            if (user.usertype == 2)
+            {
+                query = "SELECT * FROM course INNER JOIN faculty_course WHERE faculty_id = " + user.user_id + " AND faculty_course.course_id = course.course_id";
+            }
+            
             MySqlCommand cmd = new MySqlCommand(query, con);
             MySqlDataReader dataReader = cmd.ExecuteReader();
             DataTable dtb1 = new DataTable();

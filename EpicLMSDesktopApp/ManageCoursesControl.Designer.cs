@@ -76,9 +76,9 @@
             this.label3.Font = new System.Drawing.Font("Century Gothic", 14F);
             this.label3.Location = new System.Drawing.Point(426, 86);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(160, 30);
+            this.label3.Size = new System.Drawing.Size(235, 30);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Add Course:";
+            this.label3.Text = "Available Courses:";
             // 
             // btnDrop
             // 
