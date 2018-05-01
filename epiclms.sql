@@ -45,7 +45,7 @@ CREATE TABLE `course` (
   `dept_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`course_id`),
   UNIQUE KEY `course_code` (`course_code`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -149,7 +149,7 @@ CREATE TABLE `course_data` (
   KEY `faculty_id` (`faculty_id`),
   CONSTRAINT `course_data_ibfk_1` FOREIGN KEY (`course_id`) REFERENCES `course` (`course_id`),
   CONSTRAINT `course_data_ibfk_2` FOREIGN KEY (`faculty_id`) REFERENCES `faculty` (`faculty_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -357,6 +357,33 @@ INSERT INTO `student_course` VALUES (9,18,8),(10,18,1);
 UNLOCK TABLES;
 
 --
+-- Dumping routines for database 'epiclms'
+--
+/*!50003 DROP PROCEDURE IF EXISTS `getAvailableCourses` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = cp850 */ ;
+/*!50003 SET character_set_results = cp850 */ ;
+/*!50003 SET collation_connection  = cp850_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `getAvailableCourses`(IN uid INT, IN utype INT)
+BEGIN
+IF utype = 1 THEN
+SELECT DISTINCT c.course_id, c.course_code as 'Course Code', c.course_name as 'Course Name' FROM course c INNER JOIN student s ON c.semester = (SELECT semester FROM student where student_id = uid) AND c.dept_id = (SELECT dept_id from student where student_id = uid)  WHERE c.course_id NOT IN (SELECT course_id from student_course where student_id=uid);
+ELSEIF utype = 2 THEN
+SELECT DISTINCT c.course_id, c.course_code as 'Course Code', c.course_name as 'Course Name' FROM course c INNER JOIN faculty f ON c.dept_id = (SELECT dept_id from faculty where faculty_id = uid)  WHERE c.course_id NOT IN (SELECT course_id from faculty_course where faculty_id=uid);
+END IF;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+
+--
 -- Final view structure for view `available_courses`
 --
 
@@ -383,4 +410,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-05-02  3:31:07
+-- Dump completed on 2018-05-02  4:00:52
