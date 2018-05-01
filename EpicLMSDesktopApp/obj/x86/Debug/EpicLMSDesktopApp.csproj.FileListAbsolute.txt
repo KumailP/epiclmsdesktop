@@ -19,3 +19,4 @@ C:\Users\kc\documents\visual studio 2010\Projects\EpicLMSDesktopApp\EpicLMSDeskt
 C:\Users\kc\documents\visual studio 2010\Projects\EpicLMSDesktopApp\EpicLMSDesktopApp\obj\x86\Debug\EpicLMSDesktopApp.courseViewForm.resources
 C:\Users\kc\documents\visual studio 2010\Projects\EpicLMSDesktopApp\EpicLMSDesktopApp\obj\x86\Debug\EpicLMSDesktopApp.courseLog.resources
 C:\Users\kc\documents\visual studio 2010\Projects\EpicLMSDesktopApp\EpicLMSDesktopApp\obj\x86\Debug\EpicLMSDesktopApp.formSettings.resources
+C:\Users\kc\documents\visual studio 2010\Projects\EpicLMSDesktopApp\EpicLMSDesktopApp\obj\x86\Debug\EpicLMSDesktopApp.formAddCourseData.resources

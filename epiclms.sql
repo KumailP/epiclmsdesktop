@@ -140,16 +140,16 @@ CREATE TABLE `course_data` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `course_id` int(11) DEFAULT NULL,
   `faculty_id` int(11) DEFAULT NULL,
-  `file_name` varchar(50) DEFAULT NULL,
+  `file_name` varchar(255) DEFAULT NULL,
   `date_uploaded` date DEFAULT NULL,
-  `file_title` varchar(50) DEFAULT NULL,
+  `file_title` varchar(255) DEFAULT NULL,
   `description` text,
   PRIMARY KEY (`id`),
   KEY `course_id` (`course_id`),
   KEY `faculty_id` (`faculty_id`),
   CONSTRAINT `course_data_ibfk_1` FOREIGN KEY (`course_id`) REFERENCES `course` (`course_id`),
   CONSTRAINT `course_data_ibfk_2` FOREIGN KEY (`faculty_id`) REFERENCES `faculty` (`faculty_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -158,7 +158,6 @@ CREATE TABLE `course_data` (
 
 LOCK TABLES `course_data` WRITE;
 /*!40000 ALTER TABLE `course_data` DISABLE KEYS */;
-INSERT INTO `course_data` VALUES (1,1,3,'ABCFILE.jpg','2018-04-07','Lecture 04','The lecture slides from the first lecture.'),(2,1,3,'XYZFILE.pdf','2018-04-26','Lecture 06','lol'),(3,1,3,'XYZFILE.pdf','2018-04-26','Lecture 06','lolaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
 /*!40000 ALTER TABLE `course_data` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -259,7 +258,7 @@ CREATE TABLE `faculty_course` (
   KEY `course_id` (`course_id`),
   CONSTRAINT `faculty_course_ibfk_1` FOREIGN KEY (`faculty_id`) REFERENCES `faculty` (`faculty_id`),
   CONSTRAINT `faculty_course_ibfk_2` FOREIGN KEY (`course_id`) REFERENCES `course` (`course_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -268,7 +267,7 @@ CREATE TABLE `faculty_course` (
 
 LOCK TABLES `faculty_course` WRITE;
 /*!40000 ALTER TABLE `faculty_course` DISABLE KEYS */;
-INSERT INTO `faculty_course` VALUES (15,3,1),(16,3,2),(17,3,3),(24,3,19),(25,4,1),(26,4,2),(27,4,3),(28,4,4),(29,4,5);
+INSERT INTO `faculty_course` VALUES (15,3,1),(16,3,2),(17,3,3),(24,3,19),(25,4,1),(26,4,2),(27,4,3),(28,4,4),(29,4,5),(30,3,8);
 /*!40000 ALTER TABLE `faculty_course` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -324,7 +323,7 @@ CREATE TABLE `student` (
 
 LOCK TABLES `student` WRITE;
 /*!40000 ALTER TABLE `student` DISABLE KEYS */;
-INSERT INTO `student` VALUES (18,'Kumail','Pirzada','kumailpirzada@gmail.com','$2a$10$5LWZMxvmPZ4SvfvTvkfUZe1n9x1PnxHufIHKlr2Y/a2FBDuvFiIz6',1,'pic-1522779248735.jpg',2),(19,'Jahangir','Bashir','jbashir@gmail.com','$2a$10$nCg9RopP8SHQXrALfxLu4.LwhVBM2jPdGW9C4JGPMe5Om52sAhZBS',1,'default.jpg',4),(20,'New','Guy','newguy@gmail.com','$2a$10$RdROhu9XA5CldhYftE872.0p0DdBLkH/fFlzdJeOiwwmCRsfwQCHS',2,'default.jpg',4),(21,'eeguy','asd','eeguy@gmail.com','$2a$10$uD6NVYdmozLmpnIWG45LHuDsSlK0CtPLQBzno/h7l8NI5IlBaxnMS',3,'default.jpg',4);
+INSERT INTO `student` VALUES (18,'Kumail','Pirzada','kumailpirzada@gmail.com','$2a$10$5LWZMxvmPZ4SvfvTvkfUZe1n9x1PnxHufIHKlr2Y/a2FBDuvFiIz6',1,'pic-1522779248735.jpg',4),(19,'Jahangir','Bashir','jbashir@gmail.com','$2a$10$nCg9RopP8SHQXrALfxLu4.LwhVBM2jPdGW9C4JGPMe5Om52sAhZBS',1,'default.jpg',4),(20,'New','Guy','newguy@gmail.com','$2a$10$RdROhu9XA5CldhYftE872.0p0DdBLkH/fFlzdJeOiwwmCRsfwQCHS',2,'default.jpg',4),(21,'eeguy','asd','eeguy@gmail.com','$2a$10$uD6NVYdmozLmpnIWG45LHuDsSlK0CtPLQBzno/h7l8NI5IlBaxnMS',3,'default.jpg',4);
 /*!40000 ALTER TABLE `student` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -344,7 +343,7 @@ CREATE TABLE `student_course` (
   KEY `course_id` (`course_id`),
   CONSTRAINT `student_course_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `student` (`student_id`),
   CONSTRAINT `student_course_ibfk_2` FOREIGN KEY (`course_id`) REFERENCES `course` (`course_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -353,6 +352,7 @@ CREATE TABLE `student_course` (
 
 LOCK TABLES `student_course` WRITE;
 /*!40000 ALTER TABLE `student_course` DISABLE KEYS */;
+INSERT INTO `student_course` VALUES (9,18,8),(10,18,1);
 /*!40000 ALTER TABLE `student_course` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -383,4 +383,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-05-01 23:41:45
+-- Dump completed on 2018-05-02  3:31:07
