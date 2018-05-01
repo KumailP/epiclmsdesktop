@@ -42,6 +42,7 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtTime = new System.Windows.Forms.Label();
+            this.btnSettings = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.txtDept = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.Label();
@@ -74,13 +75,13 @@
             this.btnAddCourses.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddCourses.FlatAppearance.BorderSize = 0;
             this.btnAddCourses.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddCourses.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddCourses.Font = new System.Drawing.Font("Century Gothic", 9F);
             this.btnAddCourses.ForeColor = System.Drawing.Color.White;
             this.btnAddCourses.Location = new System.Drawing.Point(11, 344);
             this.btnAddCourses.Name = "btnAddCourses";
             this.btnAddCourses.Size = new System.Drawing.Size(188, 66);
             this.btnAddCourses.TabIndex = 0;
-            this.btnAddCourses.Text = "Add Courses";
+            this.btnAddCourses.Text = "Add/Remove Courses";
             this.btnAddCourses.UseVisualStyleBackColor = true;
             this.btnAddCourses.Click += new System.EventHandler(this.btnAddCourses_Click);
             // 
@@ -89,7 +90,7 @@
             this.btnManageCourses.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnManageCourses.FlatAppearance.BorderSize = 0;
             this.btnManageCourses.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnManageCourses.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnManageCourses.Font = new System.Drawing.Font("Century Gothic", 9F);
             this.btnManageCourses.ForeColor = System.Drawing.Color.White;
             this.btnManageCourses.Location = new System.Drawing.Point(11, 274);
             this.btnManageCourses.Name = "btnManageCourses";
@@ -104,7 +105,7 @@
             this.btnPeople.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPeople.FlatAppearance.BorderSize = 0;
             this.btnPeople.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPeople.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPeople.Font = new System.Drawing.Font("Century Gothic", 9F);
             this.btnPeople.ForeColor = System.Drawing.Color.White;
             this.btnPeople.Location = new System.Drawing.Point(11, 204);
             this.btnPeople.Name = "btnPeople";
@@ -130,7 +131,7 @@
             this.btnProfile.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProfile.FlatAppearance.BorderSize = 0;
             this.btnProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProfile.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProfile.Font = new System.Drawing.Font("Century Gothic", 9F);
             this.btnProfile.ForeColor = System.Drawing.Color.White;
             this.btnProfile.Location = new System.Drawing.Point(12, 134);
             this.btnProfile.Name = "btnProfile";
@@ -146,7 +147,7 @@
             this.btnHome.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnHome.FlatAppearance.BorderSize = 0;
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHome.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHome.Font = new System.Drawing.Font("Century Gothic", 9F);
             this.btnHome.ForeColor = System.Drawing.Color.White;
             this.btnHome.Location = new System.Drawing.Point(12, 64);
             this.btnHome.Name = "btnHome";
@@ -164,6 +165,7 @@
             this.panel2.Controls.Add(this.btnExit);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.txtTime);
+            this.panel2.Controls.Add(this.btnSettings);
             this.panel2.Controls.Add(this.btnLogout);
             this.panel2.Controls.Add(this.txtDept);
             this.panel2.Controls.Add(this.txtName);
@@ -244,6 +246,22 @@
             this.txtTime.Size = new System.Drawing.Size(61, 25);
             this.txtTime.TabIndex = 0;
             this.txtTime.Text = "Time";
+            // 
+            // btnSettings
+            // 
+            this.btnSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.btnSettings.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSettings.FlatAppearance.BorderSize = 0;
+            this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSettings.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSettings.ForeColor = System.Drawing.Color.White;
+            this.btnSettings.Location = new System.Drawing.Point(578, 79);
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.Size = new System.Drawing.Size(121, 44);
+            this.btnSettings.TabIndex = 0;
+            this.btnSettings.Text = "Settings";
+            this.btnSettings.UseVisualStyleBackColor = false;
+            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
             // 
             // btnLogout
             // 
@@ -361,5 +379,6 @@
         private HomeControl homeControl1;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button btnDrag;
+        private System.Windows.Forms.Button btnSettings;
     }
 }

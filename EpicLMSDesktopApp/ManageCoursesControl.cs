@@ -57,11 +57,7 @@ namespace EpicLMSDesktopApp
 
 
 
-            query = "SELECT c.course_id, c.course_code as 'Course Code', c.course_name as 'Course Name' FROM course c INNER JOIN student s ON c.semester = s.semester AND c.dept_id = s.dept_id LEFT JOIN student_course sc ON c.course_id = sc.course_id WHERE s.student_id = '"  + user.user_id + "' AND sc.course_id IS NULL";
-            if (user.usertype == 2)
-            {
-                query = "SELECT c.course_id, c.course_code as 'Course Code', c.course_name as 'Course Name' FROM course c INNER JOIN faculty f ON c.dept_id = f.dept_id LEFT JOIN faculty_course fc ON c.course_id = fc.course_id WHERE f.faculty_id = '" + user.user_id + "' AND fc.course_id IS NULL";
-            }
+            query = "CALL getAvailableCourses(" + user.user_id.ToString() + ", " + user.usertype.ToString() + ")";
 
             cmd = new MySqlCommand(query, con);
             dataReader = cmd.ExecuteReader();

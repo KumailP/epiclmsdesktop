@@ -12,6 +12,8 @@ namespace EpicLMSDesktopApp
         public formLogin()
         {
             InitializeComponent();
+            txtEmail.Text = "kumailpirzada@gmail.com";
+            txtPassword.Text = "mypwd";
         }
 
         protected override void WndProc(ref Message m)
@@ -30,7 +32,6 @@ namespace EpicLMSDesktopApp
         private void btnLogin_Click(object sender, EventArgs e)
         {
             MySqlConnection con = MySQLConnection.openCon();
-
 
             //MessageBox.Show("Connection Open ! ");
 
@@ -152,6 +153,22 @@ namespace EpicLMSDesktopApp
             if (txtPassword.Text == "password")
             {
                 txtPassword.Text = "";
+            }
+        }
+
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                btnLogin_Click(sender, e);
+            }
+        }
+
+        private void txtEmail_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                btnLogin_Click(sender, e);
             }
         }
     }

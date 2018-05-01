@@ -85,18 +85,22 @@ namespace EpicLMSDesktopApp
                 string semester = comboSem.SelectedItem.ToString();
                 string dept = (comboDept2.SelectedIndex + 1).ToString();
 
-                string query = "INSERT INTO course(course_name, course_code, course_hours, semester, dept_id) VALUES('" + cname + "', '" + ccode + "', " + chours + ", " + semester + ", " + dept + ")";
-                MySqlConnection con = MySQLConnection.openCon();
-                MySqlCommand cmd = new MySqlCommand(query, con);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Course Added!");
+                try
+                {
+                    string query = "INSERT INTO course(course_name, course_code, course_hours, semester, dept_id) VALUES('" + cname + "', '" + ccode + "', " + chours + ", " + semester + ", " + dept + ")";
+                    MySqlConnection con = MySQLConnection.openCon();
+                    MySqlCommand cmd = new MySqlCommand(query, con);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Course Added!");
 
-                dataGridView1.Refresh();
-                txtCName.Text = "course name";
-                txtCCode.Text = "course code";
-                comboCHrs.SelectedIndex = -1;
-                comboDept.SelectedIndex = -1;
-                comboSem.SelectedIndex = -1;
+                    dataGridView1.Refresh();
+                    txtCName.Text = "course name";
+                    txtCCode.Text = "course code";
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
                 
             }
             else
@@ -135,6 +139,50 @@ namespace EpicLMSDesktopApp
             {
                 txtCCode.Text = "";
             }
+        }
+
+        private void btnRemoveCourse_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Do you want to permanently delete the selected courses?", "Delete Courses?", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                foreach (DataGridViewCell oneCell in dataGridView1.SelectedCells)
+                {
+                    if (oneCell.Selected)
+                    {
+                        try
+                        {
+                            MySqlConnection con = MySQLConnection.openCon();
+                            string ccode = dataGridView1.CurrentRow.Cells["Course Code"].Value.ToString();
+                            string query = "DELETE from course WHERE course_code = '" + ccode + "'";
+                            MySqlCommand newcmd = new MySqlCommand(query, con);
+                            newcmd.ExecuteNonQuery();
+                            dataGridView1.Rows.RemoveAt(oneCell.RowIndex);
+                        }
+                        catch (MySqlException ex)
+                        {
+                            
+                            if (ex.Number == 1451)
+                            {
+                                MessageBox.Show("Cannot remove course if students/teachers are enrolled in it");
+                            }
+                            else
+                            {
+                                MessageBox.Show("MySQLException: " + ex.Message);
+                            }
+                        }
+                    }
+                }
+                setUser(user);
+
+            }
+        }
+
+        private void btnLog_Click(object sender, EventArgs e)
+        {
+            courseLog crsLog = new courseLog();
+            crsLog.StartPosition = FormStartPosition.CenterParent;
+            crsLog.ShowDialog();
         }
     }
 }

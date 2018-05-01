@@ -15,6 +15,7 @@ namespace EpicLMSDesktopApp
         private System.Drawing.Color activeColor = ColorTranslator.FromHtml("#4682b4");
         private System.Drawing.Color inactiveColor = ColorTranslator.FromHtml("#303030");
 
+        public string fullname { get; set; }
 
         public formMain(formLogin frm)
         {
@@ -160,6 +161,28 @@ namespace EpicLMSDesktopApp
                 ReleaseCapture();
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
+        }
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            //formSettings frm = new formSettings(ref user);
+            //frm.StartPosition = FormStartPosition.CenterParent;
+            //frm.ShowDialog();
+
+            using (var form = new formSettings(ref user))
+            {
+               form.ShowDialog();
+               if (form.updatename == true)
+               {
+                   user.fname = form.first_name;
+                   user.lname = form.last_name;
+               }
+               if (form.updatesemester == true)
+               {
+                   user.semester = form.semester;
+               }
+            }
+            txtName.Text = user.fname + " " + user.lname;
         }
 
     }

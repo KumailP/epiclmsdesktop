@@ -60,6 +60,12 @@
       <DependentUpon>AddCoursesControl.cs</DependentUpon>
     </Compile>
     <Compile Include="BCrypt.cs" />
+    <Compile Include="courseLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="courseLog.Designer.cs">
+      <DependentUpon>courseLog.cs</DependentUpon>
+    </Compile>
     <Compile Include="courseViewForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +102,12 @@
     <Compile Include="formRegisterType.Designer.cs">
       <DependentUpon>formRegisterType.cs</DependentUpon>
     </Compile>
+    <Compile Include="formSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formSettings.Designer.cs">
+      <DependentUpon>formSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="HomeControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -127,6 +139,9 @@
     <EmbeddedResource Include="AddCoursesControl.resx">
       <DependentUpon>AddCoursesControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="courseLog.resx">
+      <DependentUpon>courseLog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="courseViewForm.resx">
       <DependentUpon>courseViewForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -144,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formRegisterType.resx">
       <DependentUpon>formRegisterType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formSettings.resx">
+      <DependentUpon>formSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomeControl.resx">
       <DependentUpon>HomeControl.cs</DependentUpon>

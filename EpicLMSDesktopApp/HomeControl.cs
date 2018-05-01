@@ -40,25 +40,41 @@ namespace EpicLMSDesktopApp
             DataTable dtb1 = new DataTable();
             dtb1.Load(dataReader);
             con.Close();
-                        
-            for (int i = 0; i < dtb1.Rows.Count; i++)
+
+            if (dtb1.Rows.Count > 0)
             {
-                Button b = new Button();
-                b.Text = dtb1.Rows[i][1].ToString();
-                b.Width = 188;
-                b.Height = 100;
-                var margin = b.Margin;
-                margin.Left = 30;
-                b.Tag = "Course Button";
-                b.Margin = margin;
-                b.BackColor = ColorTranslator.FromHtml("#303030");
-                b.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-                b.Font = new Font("Verdana", 10);
-                b.ForeColor = ColorTranslator.FromHtml("#ffffff");
-                b.Click += new EventHandler(b_Click);
-                flowLayoutPanel1.Controls.Add(b);
+                for (int i = 0; i < dtb1.Rows.Count; i++)
+                {
+                    Button b = new Button();
+                    b.Text = dtb1.Rows[i][1].ToString();
+                    b.Width = 188;
+                    b.Height = 100;
+                    var margin = b.Margin;
+                    margin.Left = 30;
+                    b.Tag = "Course Button";
+                    b.Margin = margin;
+                    b.BackColor = ColorTranslator.FromHtml("#303030");
+                    b.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+                    b.Font = new Font("Verdana", 10);
+                    b.ForeColor = ColorTranslator.FromHtml("#ffffff");
+                    b.Click += new EventHandler(b_Click);
+                    flowLayoutPanel1.Controls.Add(b);
+                }
+                flowLayoutPanel1.AutoScroll = true;
             }
-            flowLayoutPanel1.AutoScroll = true;
+            else
+            {
+                Label lbl = new Label();
+                lbl.Text = "No courses enrolled/added yet!";
+                lbl.Width = 488;
+                lbl.Height = 100;
+                var margin = lbl.Margin;
+                margin.Left = 30;
+                lbl.Margin = margin;
+                lbl.Font = new Font("Century Gothic", 18);
+                lbl.ForeColor = ColorTranslator.FromHtml("#303030");
+                flowLayoutPanel1.Controls.Add(lbl);
+            }
         }
 
         void b_Click(object sender, EventArgs e)

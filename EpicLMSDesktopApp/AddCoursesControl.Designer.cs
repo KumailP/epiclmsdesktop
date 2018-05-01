@@ -44,6 +44,8 @@
             this.comboCHrs = new System.Windows.Forms.ComboBox();
             this.comboDept2 = new System.Windows.Forms.ComboBox();
             this.comboSem = new System.Windows.Forms.ComboBox();
+            this.btnLog = new System.Windows.Forms.Button();
+            this.btnRemoveCourse = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,18 +65,18 @@
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.dataGridView1.Location = new System.Drawing.Point(25, 144);
+            this.dataGridView1.Location = new System.Drawing.Point(25, 126);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(363, 249);
+            this.dataGridView1.Size = new System.Drawing.Size(363, 225);
             this.dataGridView1.TabIndex = 4;
             // 
             // lblAllCourses
             // 
             this.lblAllCourses.AutoSize = true;
             this.lblAllCourses.Font = new System.Drawing.Font("Century Gothic", 14F);
-            this.lblAllCourses.Location = new System.Drawing.Point(20, 68);
+            this.lblAllCourses.Location = new System.Drawing.Point(20, 59);
             this.lblAllCourses.Name = "lblAllCourses";
             this.lblAllCourses.Size = new System.Drawing.Size(243, 30);
             this.lblAllCourses.TabIndex = 3;
@@ -87,7 +89,7 @@
             this.comboDept.Font = new System.Drawing.Font("Verdana", 10F);
             this.comboDept.ForeColor = System.Drawing.Color.White;
             this.comboDept.FormattingEnabled = true;
-            this.comboDept.Location = new System.Drawing.Point(25, 110);
+            this.comboDept.Location = new System.Drawing.Point(25, 92);
             this.comboDept.Name = "comboDept";
             this.comboDept.Size = new System.Drawing.Size(363, 28);
             this.comboDept.TabIndex = 6;
@@ -246,6 +248,38 @@
             this.comboSem.Size = new System.Drawing.Size(379, 28);
             this.comboSem.TabIndex = 14;
             // 
+            // btnLog
+            // 
+            this.btnLog.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.btnLog.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLog.FlatAppearance.BorderSize = 0;
+            this.btnLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLog.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLog.ForeColor = System.Drawing.Color.White;
+            this.btnLog.Location = new System.Drawing.Point(624, 14);
+            this.btnLog.Name = "btnLog";
+            this.btnLog.Size = new System.Drawing.Size(170, 36);
+            this.btnLog.TabIndex = 13;
+            this.btnLog.Text = "Course Log";
+            this.btnLog.UseVisualStyleBackColor = false;
+            this.btnLog.Click += new System.EventHandler(this.btnLog_Click);
+            // 
+            // btnRemoveCourse
+            // 
+            this.btnRemoveCourse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.btnRemoveCourse.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRemoveCourse.FlatAppearance.BorderSize = 0;
+            this.btnRemoveCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemoveCourse.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoveCourse.ForeColor = System.Drawing.Color.White;
+            this.btnRemoveCourse.Location = new System.Drawing.Point(25, 357);
+            this.btnRemoveCourse.Name = "btnRemoveCourse";
+            this.btnRemoveCourse.Size = new System.Drawing.Size(363, 36);
+            this.btnRemoveCourse.TabIndex = 13;
+            this.btnRemoveCourse.Text = "Delete Course";
+            this.btnRemoveCourse.UseVisualStyleBackColor = false;
+            this.btnRemoveCourse.Click += new System.EventHandler(this.btnRemoveCourse_Click);
+            // 
             // AddCoursesControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -253,6 +287,8 @@
             this.Controls.Add(this.comboSem);
             this.Controls.Add(this.comboDept2);
             this.Controls.Add(this.comboCHrs);
+            this.Controls.Add(this.btnLog);
+            this.Controls.Add(this.btnRemoveCourse);
             this.Controls.Add(this.btnAddCourse);
             this.Controls.Add(this.txtCName);
             this.Controls.Add(this.txtCCode);
@@ -292,6 +328,8 @@
         private System.Windows.Forms.ComboBox comboCHrs;
         private System.Windows.Forms.ComboBox comboDept2;
         private System.Windows.Forms.ComboBox comboSem;
+        private System.Windows.Forms.Button btnLog;
+        private System.Windows.Forms.Button btnRemoveCourse;
 
     }
 }
