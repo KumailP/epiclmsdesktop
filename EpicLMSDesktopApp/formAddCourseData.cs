@@ -136,7 +136,7 @@ namespace EpicLMSDesktopApp
                 if (chkAddFile.Checked)
                 {
                     string sourceFile = txtFileName.Text;
-                    string targetPath = @"C:\users\kc\desktop";
+                    string targetPath = appPath;
                     string destFile = System.IO.Path.Combine(appPath, fileName);
 
                     if (!System.IO.Directory.Exists(targetPath))
